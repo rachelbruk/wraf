@@ -1,7 +1,7 @@
 "use strict";
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import DataService from '../../services/DataService.js';
+import DataService from '../../services/DataService.json';
 
 var rows_global = 3, cols_global = 5;
 var romMarginRight = 0, rowMarginBottom = 0;
@@ -10,11 +10,17 @@ var rowsWrapRight = romMarginRight/2;
 var matrixSlides = '';
 var index = 0;
 
+class Search extends React.Component {
+    render(){
+        return <style id = "search" ></style>;
+    }
+}
+ReactDOM.render(<Search />,document.getElementsByTagName('head')[0]);
+
 class MatrixCtrl extends React.Component {
     render(){
-        console.log(this.props.data,'data');
         var src = this.props.data.public_properties.src_small_img;
-        return <div  className = "row" search = {this.props.data.title}>
+        return <div data-search ={this.props.data.title}  className = "row" >
                     <div className="row-in">
                         <span>{this.props.data.title}</span>
                         <img src = {src} />
@@ -35,7 +41,6 @@ class MatrixCol extends React.Component {
         var items = [];
             for(var i = 0; i < cols_global; i++) {
                 items.push(<MatrixCtrl key={i} data={this.MatrixData[index]} />);
-                console.log(index,'index');
                 index++;
             }
             return <div>{items}</div>;
@@ -143,7 +148,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "llllllllllll",
+        "title": "qqqq",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -158,7 +163,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "iiiiiiiiii",
+        "title": "xxx",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -173,7 +178,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "yyyyyyy",
+        "title": "zzz",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -188,7 +193,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "rrrrrr",
+        "title": "aaa",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -203,7 +208,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "tttttt",
+        "title": "bbb",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -218,7 +223,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "llllllllllll",
+        "title": "mmm",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -233,7 +238,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "iiiiiiiiii",
+        "title": "ppp",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -248,7 +253,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "yyyyyyy",
+        "title": "fff",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -263,7 +268,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "rrrrrr",
+        "title": "ggg",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -278,7 +283,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "tttttt",
+        "title": "nnnnn",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -293,7 +298,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "llllllllllll",
+        "title": "mmmm",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -308,7 +313,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "iiiiiiiiii",
+        "title": "rrrgggg",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -323,7 +328,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "yyyyyyy",
+        "title": "vcvcv",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -338,7 +343,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "rrrrrr",
+        "title": "awsedf",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -353,7 +358,7 @@ this.MatrixData = [
     },{
         "tags": "[ ]",
         "date_updated": "2016-01-12T19:20:50.664150",
-        "title": "tttttt",
+        "title": "jhg",
         "public_properties": {
             "small_sub_title": "",
             "second_button_href": "",
@@ -368,12 +373,17 @@ this.MatrixData = [
     }
 ];   
 }
+onChange(e) {
+    var val = e.target.value;
+    var searchTag= document.getElementById('search');
+    searchTag.innerHTML = val === '' ? '' : '.row:not([data-search*="'+ val +'"]){order:0; opacity: .3;}';
+}
 render() {
     return <div>
             <div className="matrix-container">
                 <div className="search-wrap">
                     <div className="search">
-                        <input type="search" name="search"  />
+                        <input type="search" name="search" onChange={this.onChange.bind(this)}/>
                         <input type="submit" value="Submit"/>
                     </div>
                 </div>

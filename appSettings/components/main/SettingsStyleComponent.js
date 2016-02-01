@@ -14,13 +14,13 @@ class WixCtrl extends React.Component {
 class WixTabs extends React.Component {
 	render(){
 		return  <div 
-		data-wix-model={this.props.data.model}
 		data-wix-param={this.props.data.param} 
 		data-wix-ctrl={this.props.data.ctrl} 
 		data-wix-options={this.props.data.options}
 		></div>;
 	}
 }
+// data-wix-model={this.props.data.model}
 
 class WrapAdmin extends React.Component {
     constructor(props) {
@@ -216,7 +216,7 @@ class SettingsStyleComponent extends React.Component {
 			}
 		}
 
-		this.wixCtrlsData = {
+		this.wixCtrlsDataGallery = {
 			"autoPlay":{
 				model:"autoPlay",
 				ctrl:"Spinner",
@@ -318,7 +318,29 @@ class SettingsStyleComponent extends React.Component {
 				options:"{startWithColor: 'color-5', startWithOpacity:100}"
 			}
 		}
+
+		this.wixCtrlsDataMatrix = {
+			"RowsNumber":{
+				param:"RowsNumber",
+				ctrl:"Spinner",
+				options:"{ startWithNumber:3, minValue:1, maxValue:90 }"
+			},"RowsColumns":{
+				param:"RowsColumns",
+				ctrl:"Spinner",
+				options:"{startWithNumber:5, minValue:1, maxValue:90 }"
+			},"HorizontalMarginBetweenColumns":{
+				param:"HorizontalMarginBetweenColumns",
+				ctrl:"Spinner",
+				options:"{minValue:0, maxValue:90 }"
+			},"VerticalMarginBetweenRows":{
+				param:"VerticalMarginBetweenRows",
+				ctrl:"Spinner",
+				options:"{minValue:0, maxValue:90 }"
+			}
+		}
 	}
+
+	
 
 	render(){
 		return <div><ul>
@@ -330,12 +352,48 @@ class SettingsStyleComponent extends React.Component {
             </li>
         </ul>
         <div data-tab="tab0" id="wraf">
-        	<WrapAdmin data = {this.wixCtrlsData0} />
-       		<TextStyle settings={this.wixCtrlsData} />
+        	<Matrixstyle matrixSettings={this.wixCtrlsDataMatrix} />
 
 		  </div></div>;
 	}
 
 }
-
+// <WrapAdmin data = {this.wixCtrlsDataGallery} />
+// <TextStyle settings={this.wixCtrlsData} />
 export default SettingsStyleComponent;
+
+class Matrixstyle extends React.Component {
+    constructor(props) {
+		super(props);
+		this.wixCtrlsData = props.matrixSettings;
+	}
+	render(){
+		return  <div class="matrix">
+				    <div class="row"><h4>Matrix style</h4></div>
+				    <div class="row">
+				        <div class="label col-xs-3">Rows number:</div>
+				        <div class="col-xs-5">
+				            <WixCtrl data={this.wixCtrlsData["RowsNumber"]} />
+				        </div>
+				    </div>
+				    <div class="row">
+				        <div class="label col-xs-3">Rows columns:</div>
+				        <div class="col-xs-5">
+				            <WixCtrl data={this.wixCtrlsData["RowsColumns"]} />
+				        </div>
+				    </div>
+				    <div class="row">
+				        <div class="label col-xs-3">Horizontal margin between columns:</div>
+				        <div class="col-xs-5">
+				            <WixCtrl data={this.wixCtrlsData["HorizontalMarginBetweenColumns"]} />
+				        </div>
+				    </div>
+				    <div class="row">
+				        <div class="label col-xs-3">Vertical margin between rows:</div>
+				        <div class="col-xs-5">
+				            <WixCtrl data={this.wixCtrlsData["VerticalMarginBetweenRows"]} />
+				        </div>
+				    </div>
+			    </div>
+	}
+}

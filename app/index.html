@@ -10,16 +10,145 @@
 <body>
 
   <!-- place of main app-content -->
-  <app-content></app-content>
+  <div id="root"></div>
 	
 
-<home-state-component id="x-mycss"></home-state-component>
+<!--<home-state-component id="x-mycss"></home-state-component>-->
 
   <!-- lib -->
   <script type="text/javascript" src="../bower_components/wix.min.js"></script>
-
   <script src="http://localhost:8080/bundle.js"></script>
   <script type="text/javascript" src="http://localhost:8080/webpack-dev-server.js"></script>
 
 </body>
+<style type="text/css">
+.matrix-container{
+    padding: 20px 10px;
+    background-color: #f4f4f4;
+}
+.search-wrap .search{
+    overflow: hidden;
+    position: relative;
+}
+.search-wrap .search *:focus{
+    outline: 0;
+}
+.search-wrap .search span{
+    font-size: 12px;
+}
+.search-wrap .search input[type="search"] {
+    padding: 15px;
+    border-radius: 2px;
+    background: none;
+    border: 0;
+    font-size: 25px;
+    width: 100%;
+}
+.search-wrap .search input[type="submit"]{
+    background: url("../img/bgSearch.png") center center no-repeat transparent;
+    padding: 15px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 10%;
+    position: absolute;
+    font-size: 25px;
+    right: 0;
+    top: 0;
+}
+.matrix-gallery{
+    margin: 5px auto 20px;
+}
+.slick-initialized .slick-slide:focus{
+    outline: none;
+}
+.matrix-gallery-inner{
+    padding: 0;
+}
+.slick-list{
+}
+.slick-slider > button{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    width: 70px;
+    border: 0;
+    text-indent: -1000px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.matrix-gallery .slick-prev{
+    left: 0;
+    background: url('../img/arrow_left.png') center center no-repeat;
+}
+.matrix-gallery .slick-next{
+    right: 0;
+    background: url('../img/arrow_right.png') center center no-repeat;
+}
+.matrix-gallery .rows-wrap{
+    position: relative;
+}
+.matrix-gallery .rows{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.matrix-gallery .rows:last-child .row-in{
+    margin-bottom: 0 !important;
+}
+
+.matrix-gallery .rows .row-in span{
+    display: none;
+    position: absolute;
+}
+.matrix-gallery .rows .row:hover .row-in:before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+.matrix-gallery .rows >div {
+  width: 100%;
+}
+.matrix-gallery .rows .row:hover span{
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: #CCCCCC;
+    text-align: center;
+    line-height: 94px;
+}
+.matrix-gallery .rows .row:last-child .row-in{
+}
+.matrix-gallery .row, .matrix-gallery .Row{
+    display: flex;
+    float: left;
+    box-sizing: border-box;
+}
+.matrix-gallery .row .row-in{
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+}
+.matrix-gallery img{
+    display: flex !important;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+.fancybox-inner{
+    max-width: 1200px;
+}
+
+
+/*------------------------------*/
+
+</style>
 </html>

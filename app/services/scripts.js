@@ -6,9 +6,9 @@
 
 // React.render(React.createElement(MyReactComponent,{}), document.getElementById('run-react-by-js'));
 
---> sfszf
 
-var sds; <!-- sssss
+
+var sds;
 
 
 var MyDOMComponent = React.createClass({
@@ -22,7 +22,6 @@ var MyDOMComponent = React.createClass({
 
 function setData(){
     return {name:'fsf'};
-    console.log('ddddddddd');
 }
 
 

@@ -10,6 +10,18 @@ var rowsWrapRight = romMarginRight/2;
 var matrixSlides = '';
 var index = 0;
 
+Wix.addEventListener(Wix.Events.STYLE_PARAMS_CHANGE, function (style) {
+    var matrixMarginBetweenColumns, matrixMarginBetweenRows, index;
+    matrixMarginBetweenColumns = document.querySelectorAll(".rows .row");
+    for (index = 0; index < matrixMarginBetweenColumns.length; index++) {
+        matrixMarginBetweenColumns[index].style.marginRight = style.numbers.HorizontalMarginBetweenColumns + 'px';
+    }
+    matrixMarginBetweenRows = document.querySelectorAll(".rows .row");
+    for (index = 0; index < matrixMarginBetweenRows.length; index++) {
+        matrixMarginBetweenRows[index].style.marginBottom = style.numbers.VerticalMarginBetweenRows + 'px';
+    }
+});
+
 class Search extends React.Component {
     render(){
         return <style id = "search" ></style>;
@@ -18,6 +30,38 @@ class Search extends React.Component {
 ReactDOM.render(<Search />,document.getElementsByTagName('head')[0]);
 
 class MatrixCtrl extends React.Component {
+
+    componentDidMount() {
+        var elem = document.querySelectorAll('.row');
+        for(var i = 0; i < elem.length; i++) {
+            elem[i].style.width = rowWidth + '%';
+        }
+        var rowIn = document.querySelectorAll('.matrix-gallery-inner .row-in');
+        // var img = document.querySelectorAll('.matrix-gallery-inner .row-in img');
+        for(var i = 0; i < rowIn.length; i++) {
+            rowIn[i].style.marginRight = romMarginRight;
+            rowIn[i].style.marginBottom = rowMarginBottom;
+        //     img[i].style.opacity = 0.1;
+        }
+        // setTimeout (function(){
+        //     var maxHeight = 0;
+        //     rowIn[i].style.height = 'auto';
+        //     rowIn[i].each(function() {
+        //     var thisHeight = $(this).height();
+        //         if (thisHeight > maxHeight) {
+        //             maxHeight = thisHeight;
+        //         }
+        //     });
+        //     rowIn.height(function(i,val){
+        //         if (val < maxHeight) {
+        //             val=maxHeight;
+        //         }
+        //         return val;
+        //     });
+        //     // rowIn.find('img').css({opacity: 1});
+        //     // rowIn.find('span').css({lineHeight: maxHeight + 'px'});
+        // }, 500); 
+    }
     render(){
         var src = this.props.data.public_properties.src_small_img;
         return <div data-search ={this.props.data.title}  className = "row" >
@@ -29,6 +73,7 @@ class MatrixCtrl extends React.Component {
     }
 }
 
+    
 export default MatrixCtrl;
 
 class MatrixCol extends React.Component {
@@ -43,7 +88,7 @@ class MatrixCol extends React.Component {
                 items.push(<MatrixCtrl key={i} data={this.MatrixData[index]} />);
                 index++;
             }
-            return <div>{items}</div>;
+            return <div className="Row">{items}</div>;
     }
 }
 
@@ -69,6 +114,14 @@ export default MatrixRow;
 class MainComponent extends React.Component { 
     constructor(props) {
         super(props);
+        // document.getElementsByClassName('.matrix-gallery .rows-wrap').style.left = rowsWrapRight;
+        // document.getElementsByClassName('.matrix-gallery .rows-wrap').style.matrginBottom = rowMarginBottom;
+    
+
+        // var rowIn = $('.matrix-gallery-inner .row-in');
+        // rowIn.css({marginRight: romMarginRight, marginBottom: rowMarginBottom});
+        // rowIn.find('img').css({opacity: 0.1});
+
 this.MatrixData = [
     {
         "tags": "[ ]",

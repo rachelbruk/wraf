@@ -90,6 +90,11 @@ class TextStyle extends React.Component {
 	}
 	render(){
 		return <div className="wraf">
+				<h4>choose application</h4>
+                <div data-wix-ctrl="Dropdown" data-wix-model="Skin" data-wix-options="{ startWithFont:0}">
+                    <div value="gallery">Gallery</div>
+                    <div value="matrix">Matrix</div>
+                </div>
 				<div className="row">
                     <div className="label col-xs-3">Auto play, sec:</div>
                 	<div className="col-xs-5">
@@ -368,32 +373,39 @@ class Matrixstyle extends React.Component {
 		this.wixCtrlsData = props.matrixSettings;
 	}
 	render(){
-		return  <div class="matrix">
-				    <div class="row"><h4>Matrix style</h4></div>
-				    <div class="row">
-				        <div class="label col-xs-3">Rows number:</div>
-				        <div class="col-xs-5">
-				            <WixCtrl data={this.wixCtrlsData["RowsNumber"]} />
-				        </div>
+		return  <div className="matrixStyle">
+					<h4>choose application</h4>
+	                <div data-wix-ctrl="Dropdown" data-wix-model="Skin" data-wix-options="{startWithFont:0}">
+	                    <div value="gallery">Gallery</div>
+	                    <div value="matrix">Matrix</div>
+	                </div>
+					<div class="matrix">
+					    <div class="row"><h4>Matrix style</h4></div>
+					    <div class="row">
+					        <div class="label col-xs-3">Rows number:</div>
+					        <div class="col-xs-5">
+					            <WixCtrl data={this.wixCtrlsData["RowsNumber"]} />
+					        </div>
+					    </div>
+					    <div class="row">
+					        <div class="label col-xs-3">Rows columns:</div>
+					        <div class="col-xs-5">
+					            <WixCtrl data={this.wixCtrlsData["RowsColumns"]} />
+					        </div>
+					    </div>
+					    <div class="row">
+					        <div class="label col-xs-3">Horizontal margin between columns:</div>
+					        <div class="col-xs-5">
+					            <WixCtrl data={this.wixCtrlsData["HorizontalMarginBetweenColumns"]} />
+					        </div>
+					    </div>
+					    <div class="row">
+					        <div class="label col-xs-3">Vertical margin between rows:</div>
+					        <div class="col-xs-5">
+					            <WixCtrl data={this.wixCtrlsData["VerticalMarginBetweenRows"]} />
+					        </div>
+					    </div>
 				    </div>
-				    <div class="row">
-				        <div class="label col-xs-3">Rows columns:</div>
-				        <div class="col-xs-5">
-				            <WixCtrl data={this.wixCtrlsData["RowsColumns"]} />
-				        </div>
-				    </div>
-				    <div class="row">
-				        <div class="label col-xs-3">Horizontal margin between columns:</div>
-				        <div class="col-xs-5">
-				            <WixCtrl data={this.wixCtrlsData["HorizontalMarginBetweenColumns"]} />
-				        </div>
-				    </div>
-				    <div class="row">
-				        <div class="label col-xs-3">Vertical margin between rows:</div>
-				        <div class="col-xs-5">
-				            <WixCtrl data={this.wixCtrlsData["VerticalMarginBetweenRows"]} />
-				        </div>
-				    </div>
-			    </div>
+			    </div>;
 	}
 }

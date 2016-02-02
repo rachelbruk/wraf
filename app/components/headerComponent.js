@@ -1,52 +1,44 @@
 "use strict";
- 
+import React,{Component} from 'react';
+import ReactDOM from 'react-dom';
   
 //import facebookLike from '../../../components/facebookLike'; 
 //import formSearch from '../../../components/formSearch';
 
 
 // import "./header/header.scss"
- require("./main/main.css"); 
+ // require("./main/main.css"); 
 //require("./header/header.scss");
 
 
-class HeaderComponent extends HTMLElement {
+export default  class HeaderComponent extends Component {
 
-    createdCallback() {
-        this.mainMenuList  = [{
-    label: 'בית',
-    url: '#home'
-}, {
-    label: 'אודות',
-    url: '#about'
-}, {
-    label: 'צור קשר',
-    url: '#contact-us'
-},{
-    label: 'מידע',
-    url: '#info'
-}];
-        this.innerHTML = this.template();
-    }
+//    createdCallback() {
+//        this.mainMenuList  = [{
+//    label: 'בית',
+//    url: '#home'
+//}, {
+//    label: 'אודות',
+//    url: '#about'
+//}, {
+//    label: 'צור קשר',
+//    url: '#contact-us'
+//},{
+//    label: 'מידע',
+//    url: '#info'
+//}];
+//        this.innerHTML = this.template();
+//    }
 
-    template() {
+    render() {
         
-        return `<div class="inner">
-                    <div class="row">
-                        <a href="#home" class="logo" ><img src="app/assets/images/logo.png"/></a>
-                        <form-search></form-search>
-                        <facebook-like></facebook-like>
-                    </div>
+        return (
+            <div>
+            <h2>nlkm;</h2>
                 </div>
-                <div class="menu-row">
-                    <ul class=" inner main-menu">
-                      ${this.mainMenuList.map((item)=>
-                        '<li><a href="'+item.url+'">'+item.label+'</a></li>'
-                      )}
-                    </ul>
-                </div>`;
+    );
     }
 
 }
 
-document.registerElement('header-component', HeaderComponent);
+//document.registerElement('header-component', HeaderComponent);

@@ -1,6 +1,3 @@
-import React,{Component} from 'react'
-import ReactDOM from 'react-dom'
-
 
 const OAUTH2_CLIENT_ID = '120623149106-e1vc0be0ho8htjfc4t445lkeme7cl15m.apps.googleusercontent.com';
 const OAUTH2_SCOPES = [
@@ -18,7 +15,6 @@ window.onJSClientLoad = function() {
     });
 };
 function checkAuth() {
-    console.log("checkAuth");
     gapi.auth.authorize({
         client_id: OAUTH2_CLIENT_ID,
         scope: OAUTH2_SCOPES,
@@ -63,7 +59,7 @@ function loadAPIClientInterfaces() {
 function handleAPILoaded() {
     $('#search-button').attr('disabled', false);
 }
-class SearchYoutube extends Component{
+class SearchYoutube extends React.Component{
     constructor() {
         super();
         this.handleSearch = this.handleSearch.bind(this);
@@ -73,16 +69,6 @@ class SearchYoutube extends Component{
         var component=this;
         var playlistId, nextPageToken,prevPageToken;
         var searchString = this.input.value;
-        //var request = gapi.client.youtube.channels.list({
-        //    mine: true,
-        //    part: 'contentDetails'
-        //});
-        //request.execute(function(response) {
-        //    playlistId = response.result.items[0].contentDetails.relatedPlaylists.uploads;
-        //    console.log("playlistId",playlistId);
-        //    requestVideoPlaylist('PL9XmHn-vbHMBjdh094kfJ9PAnBgyEg6ty');
-        //
-        //});
         requestVideoPlaylist(searchString);
         function requestVideoPlaylist(playlistId, pageToken) {
             $('#video-container').html('');

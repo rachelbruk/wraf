@@ -90,101 +90,103 @@ class TextStyle extends React.Component {
 	}
 	render(){
 		return <div className="wraf">
-				<h4>choose application</h4>
-                <div data-wix-ctrl="Dropdown" data-wix-model="Skin" data-wix-options="{ startWithFont:0}">
-                    <div value="gallery">Gallery</div>
-                    <div value="matrix">Matrix</div>
-                </div>
-				<div className="row">
-                    <div className="label col-xs-3">Auto play, sec:</div>
-                	<div className="col-xs-5">
-	                	<WixCtrl data={this.wixCtrlsData["autoPlay"]} />
-	                	</div>
-                </div>
-                <div className="row">
-                    <div className="label col-xs-3">Overlay color & opacity:</div>
-                    <div className="col-xs-5">
-                    	<WixCtrl data={this.wixCtrlsData["colorWOpacity"]} />
-                    </div>
-                </div>
+					<h4>choose application</h4>
+	                <div data-wix-ctrl="Dropdown" data-wix-model="Skin" data-wix-options="{ startWithFont:0}">
+	                    <div value="gallery">Gallery</div>
+	                    <div value="matrix">Matrix</div>
+	                </div>
+	                <div data-tab="galleryStyle" className="galleryStyle">
+						<div className="row">
+		                    <div className="label col-xs-3">Auto play, sec:</div>
+		                	<div className="col-xs-5">
+			                	<WixCtrl data={this.wixCtrlsData["autoPlay"]} />
+			                	</div>
+		                </div>
+		                <div className="row">
+		                    <div className="label col-xs-3">Overlay color & opacity:</div>
+		                    <div className="col-xs-5">
+		                    	<WixCtrl data={this.wixCtrlsData["colorWOpacity"]} />
+		                    </div>
+		                </div>
 
-				<div className="row"><h4>Text style</h4></div>
-				<div className="row">
-				    <div className="label col-xs-3">Title font:</div>
-				    <div className="col-xs-6">
-				        <WixCtrl data={this.wixCtrlsData["titleTextColor"]} />
-				        <WixCtrl data={this.wixCtrlsData["titleFontSize"]} />
-				    </div>
-				</div>
-				<div className="row">
-				    <div className="label col-xs-3">Description font:</div>
-				    <div className="col-xs-6">
-					    <WixCtrl data={this.wixCtrlsData["DescriptionTextColor"]} />
-					    <WixCtrl data={this.wixCtrlsData["DescriptionFontSize"]} />
-				    </div>
-				</div>
-				<div className="row">
-				    <div className="label col-xs-3">Thumbnail title font:</div>
-				    <div className="col-xs-6">
-				        <WixCtrl data={this.wixCtrlsData["thumbTitleTextColor"]} />
-				       <WixCtrl data={this.wixCtrlsData["thumbTitleFontSize"]} />
-				    </div>
-				</div>
-				<div className="row">
-				    <div className="label col-xs-3">Thumbnail description font:</div>
-				    <div className="col-xs-6">
-				        <WixCtrl data={this.wixCtrlsData["thumbDescriptionTextColor"]} />
-				        <WixCtrl data={this.wixCtrlsData["thumbDescriptionFontSize"]} />
-				    </div>
-				</div>
-				<div className="row">
-				    <div className="label col-xs-3">Text shadow:</div>
-				    <div className="col-xs-6">
-				        <WixCtrl data={this.wixCtrlsData["TextShadowColor"]} />
-				        <WixCtrl data={this.wixCtrlsData["SpinnerShadowRL"]} />
-				        <WixCtrl data={this.wixCtrlsData["SpinnerShadowTB"]} />
-				        <WixCtrl data={this.wixCtrlsData["SpinnerShadow"]} />
-				    </div>
-				</div>
+						<div className="row"><h4>Text style</h4></div>
+						<div className="row">
+						    <div className="label col-xs-3">Title font:</div>
+						    <div className="col-xs-6">
+						        <WixCtrl data={this.wixCtrlsData["titleTextColor"]} />
+						        <WixCtrl data={this.wixCtrlsData["titleFontSize"]} />
+						    </div>
+						</div>
+						<div className="row">
+						    <div className="label col-xs-3">Description font:</div>
+						    <div className="col-xs-6">
+							    <WixCtrl data={this.wixCtrlsData["DescriptionTextColor"]} />
+							    <WixCtrl data={this.wixCtrlsData["DescriptionFontSize"]} />
+						    </div>
+						</div>
+						<div className="row">
+						    <div className="label col-xs-3">Thumbnail title font:</div>
+						    <div className="col-xs-6">
+						        <WixCtrl data={this.wixCtrlsData["thumbTitleTextColor"]} />
+						       <WixCtrl data={this.wixCtrlsData["thumbTitleFontSize"]} />
+						    </div>
+						</div>
+						<div className="row">
+						    <div className="label col-xs-3">Thumbnail description font:</div>
+						    <div className="col-xs-6">
+						        <WixCtrl data={this.wixCtrlsData["thumbDescriptionTextColor"]} />
+						        <WixCtrl data={this.wixCtrlsData["thumbDescriptionFontSize"]} />
+						    </div>
+						</div>
+						<div className="row">
+						    <div className="label col-xs-3">Text shadow:</div>
+						    <div className="col-xs-6">
+						        <WixCtrl data={this.wixCtrlsData["TextShadowColor"]} />
+						        <WixCtrl data={this.wixCtrlsData["SpinnerShadowRL"]} />
+						        <WixCtrl data={this.wixCtrlsData["SpinnerShadowTB"]} />
+						        <WixCtrl data={this.wixCtrlsData["SpinnerShadow"]} />
+						    </div>
+						</div>
 
-				<div className="row"><h4>CTA button settings</h4></div>
-                <div className="row">
-                    <div className="label col-xs-3">Text color & opacity:</div>
-                    <div className="col-xs-5">
-                     	<WixCtrl data={this.wixCtrlsData["TextColor"]} />
-                    </div>
-                </div>
-                 <div className="row">
-                    <div className="label col-xs-3">Hover- text color & opacity:</div>
-                    <div className="col-xs-5">
-                    	<WixCtrl data={this.wixCtrlsData["HoverTextColor"]} />
-                    </div>
-                </div>
-                 <div className="row">
-                    <div className="label col-xs-3">Background color & opacity:</div>
-                    <div className="col-xs-5">
-                    	<WixCtrl data={this.wixCtrlsData["BackgroundColor"]} />
-                    </div>
-                </div>
-                 <div className="row">
-                    <div className="label col-xs-3">Hover- background color& opacity:</div>
-                    <div className="col-xs-5">
-                    	<WixCtrl data={this.wixCtrlsData["HoverBackgroundColor"]} />
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="label col-xs-3">Border color & opacity:</div>
-                    <div className="col-xs-5">
-                    	<WixCtrl data={this.wixCtrlsData["BorderColor"]} />
-                    </div>
-                </div>
-                 <div className="row">
-                    <div className="label col-xs-3">Hover- border color& opacity:</div>
-                    <div className="col-xs-5">
-                    	<WixCtrl data={this.wixCtrlsData["HoverBorderColor"]} />
-                    </div>
-                </div>
-		    </div>;
+						<div className="row"><h4>CTA button settings</h4></div>
+		                <div className="row">
+		                    <div className="label col-xs-3">Text color & opacity:</div>
+		                    <div className="col-xs-5">
+		                     	<WixCtrl data={this.wixCtrlsData["TextColor"]} />
+		                    </div>
+		                </div>
+		                 <div className="row">
+		                    <div className="label col-xs-3">Hover- text color & opacity:</div>
+		                    <div className="col-xs-5">
+		                    	<WixCtrl data={this.wixCtrlsData["HoverTextColor"]} />
+		                    </div>
+		                </div>
+		                 <div className="row">
+		                    <div className="label col-xs-3">Background color & opacity:</div>
+		                    <div className="col-xs-5">
+		                    	<WixCtrl data={this.wixCtrlsData["BackgroundColor"]} />
+		                    </div>
+		                </div>
+		                 <div className="row">
+		                    <div className="label col-xs-3">Hover- background color& opacity:</div>
+		                    <div className="col-xs-5">
+		                    	<WixCtrl data={this.wixCtrlsData["HoverBackgroundColor"]} />
+		                    </div>
+		                </div>
+		                <div className="row">
+		                    <div className="label col-xs-3">Border color & opacity:</div>
+		                    <div className="col-xs-5">
+		                    	<WixCtrl data={this.wixCtrlsData["BorderColor"]} />
+		                    </div>
+		                </div>
+		                 <div className="row">
+		                    <div className="label col-xs-3">Hover- border color& opacity:</div>
+		                    <div className="col-xs-5">
+		                    	<WixCtrl data={this.wixCtrlsData["HoverBorderColor"]} />
+		                    </div>
+		                </div>
+	                </div>
+		    	</div>;
 	}
 
 }
@@ -193,7 +195,7 @@ class SettingsStyleComponent extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.wixCtrlsData0 = {
+		this.wixCtrlsData = {
 			"title":{
 				model:"title",
 				ctrl:"Input",
@@ -328,11 +330,11 @@ class SettingsStyleComponent extends React.Component {
 			"RowsNumber":{
 				param:"RowsNumber",
 				ctrl:"Spinner",
-				options:"{ startWithNumber:3, minValue:1, maxValue:90 }"
+				options:"{minValue:1, maxValue:90 }"
 			},"RowsColumns":{
 				param:"RowsColumns",
 				ctrl:"Spinner",
-				options:"{startWithNumber:5, minValue:1, maxValue:90 }"
+				options:"{minValue:1, maxValue:90 }"
 			},"HorizontalMarginBetweenColumns":{
 				param:"HorizontalMarginBetweenColumns",
 				ctrl:"Spinner",
@@ -348,18 +350,19 @@ class SettingsStyleComponent extends React.Component {
 	
 
 	render(){
-		return <div><ul>
-            <li data-tab="tab0">
-                <div>Manage items</div>
-            </li>
-            <li data-tab="tab1">
-                <div>Settings</div>
-            </li>
-        </ul>
-        <div data-tab="tab0" id="wraf">
-        	<Matrixstyle matrixSettings={this.wixCtrlsDataMatrix} />
-
-		  </div></div>;
+		return <div>
+					<ul>
+			            <li data-tab="matrixStyle">
+			                <div>Manage items</div>
+			            </li>
+			            <li data-tab="galleryStyle">
+			                <div>Settings</div>
+			            </li>
+			        </ul>
+			        <WrapAdmin data = {this.wixCtrlsData} />
+		        	<TextStyle settings={this.wixCtrlsDataGallery} />
+		        	<Matrixstyle matrixSettings={this.wixCtrlsDataMatrix} />
+	    		 </div>;
 	}
 
 }
@@ -373,38 +376,31 @@ class Matrixstyle extends React.Component {
 		this.wixCtrlsData = props.matrixSettings;
 	}
 	render(){
-		return  <div className="matrixStyle">
-					<h4>choose application</h4>
-	                <div data-wix-ctrl="Dropdown" data-wix-model="Skin" data-wix-options="{startWithFont:0}">
-	                    <div value="gallery">Gallery</div>
-	                    <div value="matrix">Matrix</div>
-	                </div>
-					<div class="matrix">
-					    <div class="row"><h4>Matrix style</h4></div>
-					    <div class="row">
-					        <div class="label col-xs-3">Rows number:</div>
-					        <div class="col-xs-5">
-					            <WixCtrl data={this.wixCtrlsData["RowsNumber"]} />
-					        </div>
-					    </div>
-					    <div class="row">
-					        <div class="label col-xs-3">Rows columns:</div>
-					        <div class="col-xs-5">
-					            <WixCtrl data={this.wixCtrlsData["RowsColumns"]} />
-					        </div>
-					    </div>
-					    <div class="row">
-					        <div class="label col-xs-3">Horizontal margin between columns:</div>
-					        <div class="col-xs-5">
-					            <WixCtrl data={this.wixCtrlsData["HorizontalMarginBetweenColumns"]} />
-					        </div>
-					    </div>
-					    <div class="row">
-					        <div class="label col-xs-3">Vertical margin between rows:</div>
-					        <div class="col-xs-5">
-					            <WixCtrl data={this.wixCtrlsData["VerticalMarginBetweenRows"]} />
-					        </div>
-					    </div>
+		return  <div data-tab="matrixStyle" className="matrixStyle">
+				    <div class="row"><h4>Matrix style</h4></div>
+				    <div class="row">
+				        <div class="label col-xs-3">Rows number:</div>
+				        <div class="col-xs-5">
+				            <WixCtrl data={this.wixCtrlsData["RowsNumber"]} />
+				        </div>
+				    </div>
+				    <div class="row">
+				        <div class="label col-xs-3">Rows columns:</div>
+				        <div class="col-xs-5">
+				            <WixCtrl data={this.wixCtrlsData["RowsColumns"]} />
+				        </div>
+				    </div>
+				    <div class="row">
+				        <div class="label col-xs-3">Horizontal margin between columns:</div>
+				        <div class="col-xs-5">
+				            <WixCtrl data={this.wixCtrlsData["HorizontalMarginBetweenColumns"]} />
+				        </div>
+				    </div>
+				    <div class="row">
+				        <div class="label col-xs-3">Vertical margin between rows:</div>
+				        <div class="col-xs-5">
+				            <WixCtrl data={this.wixCtrlsData["VerticalMarginBetweenRows"]} />
+				        </div>
 				    </div>
 			    </div>;
 	}

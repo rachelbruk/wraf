@@ -1,5 +1,3 @@
- 
-
 class WixCtrl extends React.Component {
 	render(){
 		return  <div 
@@ -10,17 +8,6 @@ class WixCtrl extends React.Component {
 		></div>;
 	}
 }
-
-class WixTabs extends React.Component {
-	render(){
-		return  <div 
-		data-wix-param={this.props.data.param} 
-		data-wix-ctrl={this.props.data.ctrl} 
-		data-wix-options={this.props.data.options}
-		></div>;
-	}
-}
-// data-wix-model={this.props.data.model}
 
 class WrapAdmin extends React.Component {
     constructor(props) {
@@ -194,7 +181,6 @@ class TextStyle extends React.Component {
 class SettingsStyleComponent extends React.Component {
 	constructor(props) {
 		super(props);
-
 		this.wixCtrlsData = {
 			"title":{
 				model:"title",
@@ -345,30 +331,60 @@ class SettingsStyleComponent extends React.Component {
 				options:"{minValue:0, maxValue:90 }"
 			}
 		}
+
+		this.tabs = [{
+			label: "Manage items",
+			component: "WrapAdmin",
+			props: {data:this.wixCtrlsData}
+		},{
+			label: "Settings",
+			component: "TextStyle",
+			props: {settings:this.wixCtrlsDataGallery}
+		},{
+			label: "Matrix Style",
+			component: "Matrixstyle",
+			props: {matrixSettings:this.wixCtrlsDataMatrix}
+		}];
 	}
-
-	
-
 	render(){
 		return <div>
-					<ul>
-			            <li data-tab="matrixStyle">
-			                <div>Manage items</div>
-			            </li>
-			            <li data-tab="galleryStyle">
-			                <div>Settings</div>
-			            </li>
-			        </ul>
-			        <WrapAdmin data = {this.wixCtrlsData} />
-		        	<TextStyle settings={this.wixCtrlsDataGallery} />
-		        	<Matrixstyle matrixSettings={this.wixCtrlsDataMatrix} />
+					<TabsComponent tabs={this.tabs}/>	
 	    		 </div>;
 	}
-
 }
-// <WrapAdmin data = {this.wixCtrlsDataGallery} />
-// <TextStyle settings={this.wixCtrlsData} />
+
 export default SettingsStyleComponent;
+
+
+class TabsComponent extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			activeIndex: 0
+		}
+	}
+	getComponent(name,props){
+			return React.createElement(eval(name),props, null);
+	}
+	_click(index){
+		this.setState({activeIndex:index})
+	}
+	render(){
+		return <div>
+					<ul className="tabs">
+						{this.props.tabs.map((tab,i)=>
+							<li className={(this.state.activeIndex == i) && "tab"} onClick={()=>this._click(i)} key={i}>{tab.label}</li>
+						)}
+			        </ul>
+			        <div className="content">
+						{this.props.tabs.map((tab,i)=>
+							<div className={(this.state.activeIndex == i) && "active"} key={i}>{this.getComponent(tab.component,tab.props)}</div>
+						)}
+					</div>	
+	    		 </div>;
+	}
+}
+
 
 class Matrixstyle extends React.Component {
     constructor(props) {
@@ -376,29 +392,29 @@ class Matrixstyle extends React.Component {
 		this.wixCtrlsData = props.matrixSettings;
 	}
 	render(){
-		return  <div data-tab="matrixStyle" className="matrixStyle">
-				    <div class="row"><h4>Matrix style</h4></div>
-				    <div class="row">
-				        <div class="label col-xs-3">Rows number:</div>
-				        <div class="col-xs-5">
+		return  <div data-tab="matrixStyle" className="matrixStyle container">
+				    <div className="row"><h4>Matrix style</h4></div>
+				    <div className="row">
+				        <div className="label col-xs-3">Rows number:</div>
+				        <div className="col-xs-5">
 				            <WixCtrl data={this.wixCtrlsData["RowsNumber"]} />
 				        </div>
 				    </div>
-				    <div class="row">
-				        <div class="label col-xs-3">Rows columns:</div>
-				        <div class="col-xs-5">
+				    <div className="row">
+				        <div className="label col-xs-3">Rows columns:</div>
+				        <div className="col-xs-5">
 				            <WixCtrl data={this.wixCtrlsData["RowsColumns"]} />
 				        </div>
 				    </div>
-				    <div class="row">
-				        <div class="label col-xs-3">Horizontal margin between columns:</div>
-				        <div class="col-xs-5">
+				    <div className="row">
+				        <div className="label col-xs-3">Horizontal margin between columns:</div>
+				        <div className="col-xs-5">
 				            <WixCtrl data={this.wixCtrlsData["HorizontalMarginBetweenColumns"]} />
 				        </div>
 				    </div>
-				    <div class="row">
-				        <div class="label col-xs-3">Vertical margin between rows:</div>
-				        <div class="col-xs-5">
+				    <div className="row">
+				        <div className="label col-xs-3">Vertical margin between rows:</div>
+				        <div className="col-xs-5">
 				            <WixCtrl data={this.wixCtrlsData["VerticalMarginBetweenRows"]} />
 				        </div>
 				    </div>
